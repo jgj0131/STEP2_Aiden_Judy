@@ -9,21 +9,21 @@
 import Foundation
 
 // 단위변환에 필요한 상수들
-let inch_m_num : Double = 2.54
-let yard_m_num : Double = 91.44
-let cm_m_num : Double = 100
+let inch_cm_num : Double = 2.54
+let yard_cm_num : Double = 91.44
+let m_cm_num : Double = 100
 
 //단위에따라 값 변환하는 함수들
-func cmTom(cm: Double) -> Double { return Double(cm) / cm_m_num }
-func mTocm(m: Double) -> Double { return Double(m) * cm_m_num }
-func cmToinch(cm: Double) -> Double { return Double(cm) * inch_m_num }
-func inchTocm(inch: Double) -> Double { return Double(inch) / inch_m_num }
-func mToinch(m: Double) -> Double { return Double(m) * (inch_m_num / cm_m_num) }
-func inchTom(inch: Double) -> Double { return Double(inch) / (inch_m_num / cm_m_num) }
-func yardTocm(yard: Double) -> Double { return Double(yard) * yard_m_num }
-func cmToyard(cm: Double) -> Double { return Double(cm) / yard_m_num }
-func yardTom(yard: Double) -> Double { return Double(yard) * (yard_m_num / cm_m_num) }
-func mToyard(m: Double) -> Double { return Double(m) / (yard_m_num / cm_m_num) }
+func cmTom(cm: Double) -> Double { return Double(cm) / m_cm_num }
+func mTocm(m: Double) -> Double { return Double(m) * m_cm_num }
+func cmToinch(cm: Double) -> Double { return Double(cm) * inch_cm_num }
+func inchTocm(inch: Double) -> Double { return Double(inch) / inch_cm_num }
+func mToinch(m: Double) -> Double { return Double(m) * (inch_cm_num / m_cm_num) }
+func inchTom(inch: Double) -> Double { return Double(inch) / (inch_cm_num / m_cm_num) }
+func yardTocm(yard: Double) -> Double { return Double(yard) * yard_cm_num }
+func cmToyard(cm: Double) -> Double { return Double(cm) / yard_cm_num }
+func yardTom(yard: Double) -> Double { return Double(yard) * (yard_cm_num / m_cm_num) }
+func mToyard(m: Double) -> Double { return Double(m) / (yard_cm_num / m_cm_num) }
 
 // 입력받아 숫자와 단위를 구분하는 함수
 func input(_ `in` : String)->(num : Double, unit : String)?{
